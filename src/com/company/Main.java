@@ -29,8 +29,8 @@ public class Main {
 
                 System.out.println("1) sin ");
                 System.out.println("2) sin to Radians");
-                System.out.println("1) cos");
-                System.out.println("2) cos to Radians");
+                System.out.println("3) cos");
+                System.out.println("4) cos to Radians");
 
                 calc = new Calculator(scan, true); //isSingle == true
                 return calc;
