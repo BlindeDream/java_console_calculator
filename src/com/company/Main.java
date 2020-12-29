@@ -1,19 +1,21 @@
 package com.company;
+
 import com.sun.deploy.net.MessageHeader;
 
 import java.util.ArrayList;
 import java.util.Scanner;
 import java.util.Scanner;
 
-public class Main{
+public class Main {
 
     public static ArrayList<Double> list = new ArrayList<Double>();
-    public static void printResult(Calculator calculator, Scanner scan){
+
+    public static void printResult(Calculator calculator, Scanner scan) {
         System.out.print("Результат: ");
-        list.add((calculator.calculate()));
+        System.out.println((calculator.calculate()));
     }
 
-    public static Calculator menu(Scanner scan){
+    public static Calculator menu(Scanner scan) {
         System.out.println("Доступны следующие операции:");
         System.out.println("1) sin,cos");
         System.out.println("2) simple calculator");
@@ -22,7 +24,7 @@ public class Main{
         int choise = scan.nextInt();
         Calculator calc;
         System.out.println();
-        switch (choise){
+        switch (choise) {
             case (1):
 
                 System.out.println("1) sin ");
@@ -44,9 +46,11 @@ public class Main{
                 calc = new Calculator(scan, false); //isSingle == false
                 return calc;
 
-            case 3 : {System.out.println("\nRoundedCalculator");//при втором пункте меню выводится калькулятор,который задает кол-во цифр после запятой и округляет результат
+            case 3: {
+                System.out.println("\nRoundedCalculator");//при втором пункте меню выводится калькулятор,который задает кол-во цифр после запятой и округляет результат
                 Calculator r_calculator = new Calculator();//обьявляем обьект второго калькулятора
-                r_calculator.roundcalc();}//также и метод round,который задает кол-во цифр после запятой,а затем округляет результат
+                r_calculator.roundcalc();
+            }//также и метод round,который задает кол-во цифр после запятой,а затем округляет результат
 
 
             default:
@@ -58,8 +62,8 @@ public class Main{
     public static void main(String[] args) {
         Scanner scan = new Scanner(System.in);
         Calculator calculator = menu(scan);
-        list.add((calculator.calculate()));
-        System.out.println(list);
+        printResult(calculator, scan);
+
     }
 }
 

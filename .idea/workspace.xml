@@ -1,7 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="19986b7f-423d-4f3a-a973-6f40d30c66b1" name="Default Changelist" comment="" />
+    <list default="true" id="19986b7f-423d-4f3a-a973-6f40d30c66b1" name="Default Changelist" comment="commit">
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/com/company/JsonController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/calculator v2/com/company/Calculator.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/calculator v2/com/company/Calculator.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/calculator v2/com/company/DataSet.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/calculator v2/com/company/DataSet.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/calculator v2/com/company/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/calculator v2/com/company/Main.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/calculator v2/com/company/SingleDataSet.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/calculator v2/com/company/SingleDataSet.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/company/Calculator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/company/Calculator.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/company/DataSet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/company/DataSet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/company/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/company/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/company/SingleDataSet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/company/SingleDataSet.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -26,6 +38,9 @@
         <option value="Class" />
       </list>
     </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="ProjectId" id="1mGgn6NEliLIeoczOIKaRAKXE5F" />
   <component name="ProjectView">
@@ -90,9 +105,10 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../exam_ovcharenko_1-2-3-main" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../console-calculator-master" />
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
@@ -105,19 +121,6 @@
       <module name="calculator v2" />
       <RunnerSettings RunnerId="Run" />
       <ConfigurationWrapper RunnerId="Run" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration default="true" type="ArquillianTestNG" factoryName="" nameIsGenerated="true">
-      <option name="arquillianRunConfiguration">
-        <value>
-          <option name="containerStateName" value="" />
-        </value>
-      </option>
-      <option name="TEST_OBJECT" value="CLASS" />
-      <properties />
-      <listeners />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -138,10 +141,28 @@
       <updated>1609125509655</updated>
       <workItem from="1609125510818" duration="1017000" />
       <workItem from="1609127541209" duration="18672000" />
+      <workItem from="1609223301566" duration="8106000" />
+      <workItem from="1609233901172" duration="864000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="oldMeFiltersMigrated" value="true" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="commit" />
+    <option name="LAST_COMMIT_MESSAGE" value="commit" />
   </component>
 </project>

@@ -2,15 +2,16 @@ package com.company;
 
 import java.util.Scanner;
 
-public class DataSet extends SingleDataSet{
+public class DataSet extends SingleDataSet {
     private double num2;
 
-    public DataSet(Scanner scanner){
+    public DataSet(Scanner scanner) {
         super(scanner);
         readNum2();
+
     }
 
-    public DataSet(double number1, double number2, char newOperation){
+    public DataSet(double number1, double number2, char newOperation) {
         super(number1, newOperation);
         num2 = number2;
     }
@@ -21,17 +22,17 @@ public class DataSet extends SingleDataSet{
         operation = scan.next().charAt(0);
     }
 
-    private void readNum2(){
+    private void readNum2() {
         System.out.print("Введите второе число: ");
         num2 = scan.nextDouble();
     }
 
-    public double getNum2(){
+    public double getNum2() {
         return num2;
     }
 
-    public boolean isOperationWrong(){
+    public boolean isOperationWrong() {
         return (operation == '/' && num2 == 0) ||
-                (operation != '+' && operation != '-'  && operation != '*'  && operation != '/' && operation != '%');
+                (operation != '+' && operation != '-' && operation != '*' && operation != '/' && operation != '%');
     }
 }

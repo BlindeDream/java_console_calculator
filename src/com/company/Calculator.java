@@ -16,19 +16,20 @@ public class Calculator {
     private Scanner scanner;
     private boolean isSingleDataSet;
 
-    public Calculator(Scanner scan, boolean isSingle){
+    public Calculator(Scanner scan, boolean isSingle) {
         scanner = scan;
         isSingleDataSet = isSingle;
-        if (isSingleDataSet){
+        if (isSingleDataSet) {
             singleData = new SingleDataSet(scanner);
             data = null;
         } else {
+
             data = new DataSet(scanner);
             singleData = null;
         }
     }
 
-    public Calculator(DataSet newData){
+    public Calculator(DataSet newData) {
         scanner = newData.getScanner();
         data = newData;
     }
@@ -38,9 +39,9 @@ public class Calculator {
     }
 
 
-    public double newCalculation(){
+    public double newCalculation() {
         System.out.println("Неверная операция. Повторите ввод. ");
-        if (isSingleDataSet){
+        if (isSingleDataSet) {
             singleData = new SingleDataSet(scanner);
         } else {
             data = new DataSet(scanner);
@@ -48,48 +49,49 @@ public class Calculator {
         return calculate();
     }
 
-    public double calculate(){
-        if (isSingleDataSet && singleData.isOperationWrong() || !isSingleDataSet && data.isOperationWrong()){
+    public double calculate() {
+
+        if (isSingleDataSet && singleData.isOperationWrong() || !isSingleDataSet && data.isOperationWrong()) {
             return newCalculation();
         } else {
-            if (isSingleDataSet){
+            if (isSingleDataSet) {
                 double num1 = singleData.getNum1();
-                switch(singleData.getOperation()){
-                    case('1'): // sin
+                switch (singleData.getOperation()) {
+                    case ('1'): // sin
                         return Math.sin(num1);
-                    case('2'): // sin
+                    case ('2'): // sin
                         return Math.sin(Math.toRadians(num1));
-                    case('3'): // sin
+                    case ('3'): // sin
                         return Math.cos(num1);
-                    case('4'): // cos
+                    case ('4'): // cos
                         return Math.cos(Math.toRadians(num1));
 
 
-
-
                     default:
-                        return newCalculation();
+                        return calculate();
                 }
 
             } else {
                 double num1 = data.getNum1();
                 double num2 = data.getNum2();
-                switch(data.getOperation()){
-                    case('+'):
-                        return num1+num2;
-                    case('-'):
-                        return num1-num2;
-                    case('*'):
-                        return num1*num2;
-                    case('/'):
-                        return num1/num2;
+                switch (data.getOperation()) {
+                    case ('+'):
+                        return num1 + num2;
+                    case ('-'):
+                        return num1 - num2;
+                    case ('*'):
+                        return num1 * num2;
+                    case ('/'):
+                        return num1 / num2;
                     default:
-                        return newCalculation();
+                        return calculate();
+
                 }
             }
         }
     }
-    public void roundcalc(){//в RoundedCalculator мы вводим действие,затем кол-во цифр после запятой и, сначала, считаем результат,
+
+    public void roundcalc() {//в RoundedCalculator мы вводим действие,затем кол-во цифр после запятой и, сначала, считаем результат,
 
         BufferedReader d = new BufferedReader(new InputStreamReader(System.in));
         String sIn;
@@ -107,6 +109,7 @@ public class Calculator {
 
     /**
      * Преобразовать строку в обратную польскую нотацию
+     *
      * @param sIn Входная строка
      * @return Выходная строка в обратной польской нотации
      */
@@ -119,10 +122,10 @@ public class Calculator {
             cIn = sIn.charAt(i);
             if (isOp(cIn)) {
                 while (sbStack.length() > 0) {
-                    cTmp = sbStack.substring(sbStack.length()-1).charAt(0);
+                    cTmp = sbStack.substring(sbStack.length() - 1).charAt(0);
                     if (isOp(cTmp) && (opPrior(cIn) <= opPrior(cTmp))) {
                         sbOut.append(" ").append(cTmp).append(" ");
-                        sbStack.setLength(sbStack.length()-1);
+                        sbStack.setLength(sbStack.length() - 1);
                     } else {
                         sbOut.append(" ");
                         break;
@@ -133,16 +136,16 @@ public class Calculator {
             } else if ('(' == cIn) {
                 sbStack.append(cIn);
             } else if (')' == cIn) {
-                cTmp = sbStack.substring(sbStack.length()-1).charAt(0);
+                cTmp = sbStack.substring(sbStack.length() - 1).charAt(0);
                 while ('(' != cTmp) {
                     if (sbStack.length() < 1) {
                         throw new Exception("Ошибка разбора скобок. Проверьте правильность выражения.");
                     }
                     sbOut.append(" ").append(cTmp);
-                    sbStack.setLength(sbStack.length()-1);
-                    cTmp = sbStack.substring(sbStack.length()-1).charAt(0);
+                    sbStack.setLength(sbStack.length() - 1);
+                    cTmp = sbStack.substring(sbStack.length() - 1).charAt(0);
                 }
-                sbStack.setLength(sbStack.length()-1);
+                sbStack.setLength(sbStack.length() - 1);
             } else {
                 // Если символ не оператор - добавляем в выходную последовательность
                 sbOut.append(cIn);
@@ -151,11 +154,11 @@ public class Calculator {
 
         // Если в стеке остались операторы, добавляем их в входную строку
         while (sbStack.length() > 0) {
-            sbOut.append(" ").append(sbStack.substring(sbStack.length()-1));
-            sbStack.setLength(sbStack.length()-1);
+            sbOut.append(" ").append(sbStack.substring(sbStack.length() - 1));
+            sbStack.setLength(sbStack.length() - 1);
         }
 
-        return  sbOut.toString();
+        return sbOut.toString();
     }
 
     /**
@@ -167,7 +170,6 @@ public class Calculator {
             case '+':
             case '*':
             case '/':
-            case 's':
 
                 return true;
         }
@@ -176,6 +178,7 @@ public class Calculator {
 
     /**
      * Возвращает приоритет операции
+     *
      * @param op char
      * @return byte
      */
@@ -190,6 +193,7 @@ public class Calculator {
 
     /**
      * Считает выражение, записанное в обратной польской нотации
+     *
      * @param sIn
      * @return double result
      */
@@ -198,7 +202,7 @@ public class Calculator {
         String sTmp;
         Deque<Double> stack = new ArrayDeque<Double>();
         StringTokenizer st = new StringTokenizer(sIn);
-        while(st.hasMoreTokens()) {
+        while (st.hasMoreTokens()) {
             try {
                 sTmp = st.nextToken().trim();
                 if (1 == sTmp.length() && isOp(sTmp.charAt(0))) {
@@ -226,8 +230,7 @@ public class Calculator {
                             throw new Exception("Недопустимая операция " + sTmp);
                     }
                     stack.push(dA);
-                }
-                else {
+                } else {
                     dA = Double.parseDouble(sTmp);
                     stack.push(dA);
                 }
