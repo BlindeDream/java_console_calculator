@@ -53,15 +53,15 @@ public class Calculator {
             if (isSingleDataSet){
                 double num1 = singleData.getNum1();
                 switch(singleData.getOperation()){
-                    case('1'): // sin
+                    case('1'):
                         return Math.sin(num1);
-                    case('2'): // cos
+                    case('2'):
                         return Math.cos(num1);
-                    case('3'): // sqrt
+                    case('3'):
                         return Math.log10(num1);
-                    case('4'): // sqrt
+                    case('4'):
                         return Math.sin(Math.toRadians(num1));
-                    case('5'): // sqrt
+                    case('5'):
                         return Math.cos(Math.toRadians(num1));
                     default:
                         return newCalculation();
