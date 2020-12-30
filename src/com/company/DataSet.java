@@ -36,3 +36,4 @@ public class DataSet extends SingleDataSet {
                 (operation != '+' && operation != '-' && operation != '*' && operation != '/' && operation != '%');
     }
 }
+

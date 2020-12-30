@@ -5,10 +5,8 @@ import java.io.InputStreamReader;
 import java.util.ArrayDeque;
 import java.util.Deque;
 import java.util.Scanner;
-import java.util.StringTokenizer;
-
-import java.util.Scanner;
 import java.lang.Math;
+import java.util.StringTokenizer;
 
 public class Calculator {
     private DataSet data;
@@ -16,20 +14,19 @@ public class Calculator {
     private Scanner scanner;
     private boolean isSingleDataSet;
 
-    public Calculator(Scanner scan, boolean isSingle) {
+    public Calculator(Scanner scan, boolean isSingle){
         scanner = scan;
         isSingleDataSet = isSingle;
-        if (isSingleDataSet) {
+        if (isSingleDataSet){
             singleData = new SingleDataSet(scanner);
             data = null;
         } else {
-
             data = new DataSet(scanner);
             singleData = null;
         }
     }
 
-    public Calculator(DataSet newData) {
+    public Calculator(DataSet newData){
         scanner = newData.getScanner();
         data = newData;
     }
@@ -39,9 +36,9 @@ public class Calculator {
     }
 
 
-    public double newCalculation() {
+    public double newCalculation(){
         System.out.println("Неверная операция. Повторите ввод. ");
-        if (isSingleDataSet) {
+        if (isSingleDataSet){
             singleData = new SingleDataSet(scanner);
         } else {
             data = new DataSet(scanner);
@@ -49,48 +46,46 @@ public class Calculator {
         return calculate();
     }
 
-    public double calculate() {
-
-        if (isSingleDataSet && singleData.isOperationWrong() || !isSingleDataSet && data.isOperationWrong()) {
+    public double calculate(){
+        if (isSingleDataSet && singleData.isOperationWrong() || !isSingleDataSet && data.isOperationWrong()){
             return newCalculation();
         } else {
-            if (isSingleDataSet) {
+            if (isSingleDataSet){
                 double num1 = singleData.getNum1();
-                switch (singleData.getOperation()) {
-                    case ('1'): // sin
+                switch(singleData.getOperation()){
+                    case('1'): // sin
                         return Math.sin(num1);
-                    case ('2'): // sin
-                        return Math.sin(Math.toRadians(num1));
-                    case ('3'): // sin
+                    case('2'): // cos
                         return Math.cos(num1);
-                    case ('4'): // cos
+                    case('3'): // sqrt
+                        return Math.log10(num1);
+                    case('4'): // sqrt
+                        return Math.sin(Math.toRadians(num1));
+                    case('5'): // sqrt
                         return Math.cos(Math.toRadians(num1));
-
-
                     default:
-                        return calculate();
+                        return newCalculation();
                 }
 
             } else {
                 double num1 = data.getNum1();
                 double num2 = data.getNum2();
-                switch (data.getOperation()) {
-                    case ('+'):
-                        return num1 + num2;
-                    case ('-'):
-                        return num1 - num2;
-                    case ('*'):
-                        return num1 * num2;
-                    case ('/'):
-                        return num1 / num2;
-                    default:
-                        return calculate();
+                switch(data.getOperation()){
+                    case('+'):
+                        return num1+num2;
+                    case('-'):
+                        return num1-num2;
+                    case('*'):
+                        return num1*num2;
+                    case('/'):
+                        return num1/num2;
 
+                    default:
+                        return newCalculation();
                 }
             }
         }
     }
-
     public void roundcalc() {//в RoundedCalculator мы вводим действие,затем кол-во цифр после запятой и, сначала, считаем результат,
 
         BufferedReader d = new BufferedReader(new InputStreamReader(System.in));
@@ -247,3 +242,5 @@ public class Calculator {
     }
 
 }
+
+
